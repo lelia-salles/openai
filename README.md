@@ -1,7 +1,4 @@
 # OpenAI Chat Integration
-==========================
-
-## Overview
 
 This project integrates with the OpenAI API to provide a conversational interface using the **Text Completion** model.
 
