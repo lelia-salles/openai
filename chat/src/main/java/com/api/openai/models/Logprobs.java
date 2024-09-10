@@ -1,14 +1,13 @@
-package com.api.openai;
+package com.api.openai.models;
 
 import com.fasterxml.jackson.databind.ObjectMapper; 
 import com.fasterxml.jackson.annotation.JsonProperty; 
 import java.util.ArrayList;
 
-public class Message {
+public class Logprobs {
 
-    public String role;
-    public String content;
+          public ArrayList<Content> content;
+    }
+    
+
 }
-
-
-
