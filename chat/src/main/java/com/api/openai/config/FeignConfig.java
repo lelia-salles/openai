@@ -14,7 +14,7 @@ public class FeignConfig {
     @Bean    
     protected RequestInterceptor requestInterceptor() {
         return requestTemplate -> requestTemplate.header("Authorization", "Bearer " + apiKey);
-        return requestTemplate -> requestTemplate.header("Content-Type: application/json");
+        return requestTemplate -> requestTemplate.header("Content-Type:", " application/json");
     }
 
 }
