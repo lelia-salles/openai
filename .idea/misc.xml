@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/chat/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="92" key="FileChooserDialogImpl" timestamp="1719109152587">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="92" key="FileChooserDialogImpl/0.0.1366.728" timestamp="1719109152587" />
+  </component>
+</project>
