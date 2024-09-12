@@ -19,4 +19,5 @@ public interface OpenAiClient {
     @getMapping(path = "/v1/chat/completions")
     @RequestEntity<String> getRequestResponse(@RequestBody request);
 
+    ResponseEntity<String> getChatCompletionResponse(ChatCompletionRequest request);
 }

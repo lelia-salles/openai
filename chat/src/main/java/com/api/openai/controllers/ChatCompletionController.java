@@ -1,11 +1,20 @@
 package com.api.openai.controllers;
 
+import com.api.openai.models.ChatCompletionRequest;
+import com.api.openai.models.ChatCompletionResponse;
+import com.api.openai.models.Message;
 import com.api.openai.models.OpenAiClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.List;
+
+import static com.sun.org.apache.xml.internal.serializer.utils.Utils.messages;
+
 
 @RestController
 @RequestMapping("/api/chat")
@@ -16,8 +25,20 @@ public class ChatCompletionController {
 
     @Autowired
     private OpenAiClient openAiClient;
+    @PostMapping("/ask")
+    public String askQuestion(@RequestBody String question) {
+        ChatCompletionRequest request = new ChatCompletionRequest();
+        request.setModel(model);
 
-    public String askQuestion(RequestBody String question) {
+        Message message = new Message();
+        message.setRole("user");
+        message.setContent(question);
+
+        request.setMessages(List.of(message));
+
+        ResponseEntity<String> response = openAiClient.getChatCompletionResponse(request);
+
+        ChatCompletionResponse completionResponse = new Gson();
 
 
     }

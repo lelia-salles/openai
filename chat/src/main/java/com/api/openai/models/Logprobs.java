@@ -6,8 +6,16 @@ import java.util.ArrayList;
 
 public class Logprobs {
 
-          public ArrayList<Content> content;
+          private ArrayList<Content> content;
+
+    public ArrayList<Content> getContent() {
+        return content;
     }
+
+    public void setContent(ArrayList<Content> content) {
+        this.content = content;
+    }
+}
     
 
-}
+
