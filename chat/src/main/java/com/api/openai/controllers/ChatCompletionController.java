@@ -4,6 +4,7 @@ import com.api.openai.models.ChatCompletionRequest;
 import com.api.openai.models.ChatCompletionResponse;
 import com.api.openai.models.Message;
 import com.api.openai.models.OpenAiClient;
+import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-import static com.sun.org.apache.xml.internal.serializer.utils.Utils.messages;
 
 
 @RestController
@@ -38,8 +38,9 @@ public class ChatCompletionController {
 
         ResponseEntity<String> response = openAiClient.getChatCompletionResponse(request);
 
-        ChatCompletionResponse completionResponse = new Gson();
+        ChatCompletionResponse completionResponse = new Gson().fromJson(response.getBody(), ChatCompletionResponse.class);
 
+        return completionResponse.getChoices().get(0).getMessage();
 
     }
 
