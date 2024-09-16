@@ -30,6 +30,10 @@ public class ChatCompletionController {
         ChatCompletionRequest request = new ChatCompletionRequest();
         request.setModel(model);
 
+        Message system = new Message();
+        system.setRole("system");
+        system.setContent( " Responda todas as perguntas em pt-BR" );
+
         Message message = new Message();
         message.setRole("user");
         message.setContent(question);
