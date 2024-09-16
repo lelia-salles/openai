@@ -40,7 +40,7 @@ public class ChatCompletionController {
 
         ChatCompletionResponse completionResponse = new Gson().fromJson(response.getBody(), ChatCompletionResponse.class);
 
-        return completionResponse.getChoices().get(0).getMessage();
+        return completionResponse.getChoices().get(0).getMessage().getContent();
 
     }
 
