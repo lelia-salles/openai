@@ -13,6 +13,10 @@ This project integrates with the OpenAI API to provide a conversational interfac
 * **Conversational Interface:** Users can interact with the model using natural language input.
 * **Text Completion:** The model generates responses to user input, creating a conversational flow.
 
+## Limitations
+
+This is an exaple of how to start creating a functional OpenAi. A chat can be developed from here and change the API token from your own API. This API was buld upon Feign. However Spring has already its AI API which can be found [here](https://docs.spring.io/spring-ai/reference/).
+
 ## Technical Details
 
 * **API Client:** OpenAiClient (using Feign)
