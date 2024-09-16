@@ -30,15 +30,19 @@ public class ChatCompletionController {
         ChatCompletionRequest request = new ChatCompletionRequest();
         request.setModel(model);
 
+        Message system = new Message();
+        system.setRole("system");
+        system.setContent( " Responda todas as perguntas em pt-BR" );
+
         Message message = new Message();
         message.setRole("user");
         message.setContent(question);
 
         request.setMessages(List.of(message));
 
-        ResponseEntity<String> response = openAiClient.getChatCompletionResponse(request);
+       ResponseEntity<String> response = openAiClient.getChatCompletionResponse(request);
 
-        ChatCompletionResponse completionResponse = new Gson().fromJson(response.getBody(), ChatCompletionResponse.class);
+        ChatCompletionResponse completionResponse = new Gson();
 
         return completionResponse.getChoices().get(0).getMessage().getContent();
 
