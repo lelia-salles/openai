@@ -36,9 +36,11 @@ public class ChatCompletionController {
 
         request.setMessages(List.of(message));
 
-        ResponseEntity<String> response = openAiClient.getChatCompletionResponse(request);
+       ResponseEntity<String> response = openAiClient.getChatCompletionResponse(request);
 
-        ChatCompletionResponse completionResponse = new Gson();
+        ChatCompletionResponse completionResponse = new Gson().fromJson(response.getBody(), ChatCompletionResponse.class);
+
+        return completionResponse.getChoices().get(0).getMessage();
 
 
     }
